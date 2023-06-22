@@ -13,7 +13,7 @@ public:
     // Default constructor
     Hero()
     {
-        cout << "Default constructor" << endl;
+        cout << "Default constructor called" << endl;
     }
 
     // parameterised constructor
@@ -27,6 +27,15 @@ public:
         this->health = health;
         this->level = level;
     }
+
+    // copy constructor
+    Hero(Hero &temp)
+    {
+        cout << "Copy constructor called" << endl;
+        this->health = temp.health;
+        this->level = temp.level;
+    }
+
     void print()
     {
         cout << "Health : " << this->health << endl;
@@ -48,10 +57,20 @@ public:
     {
         level = ch;
     }
+
+    // Destructor
+    ~Hero()
+    {
+        cout << "Destructor called" << endl;
+    }
 };
 
 int main()
 {
-    Hero ramesh(50, 'A');
-    ramesh.print();
+    // Static
+    Hero a; // automatic destructor called
+
+    // Dynamic
+    Hero *b = new Hero;
+    delete b; // manually destructor called
 }
