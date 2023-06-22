@@ -9,7 +9,6 @@ private:
 
 public:
     char level;
-
     int gethealth()
     {
         return health;
@@ -30,6 +29,7 @@ public:
         level = ch;
     }
 };
+
 int main()
 {
     // 1
@@ -38,9 +38,8 @@ int main()
     // cout << h.gethealth() << endl;
     // cout << sizeof(h) << endl; // op-> 8 but why not 5 [(int+char)->(4+1)]  // padding //greedy allignment
 
-    // 2
-
-    // static allocation
+    // // 2
+    // // static allocation
     Hero h1;
     h1.sethealth(70, "xyz");
     h1.setlevel('B');
